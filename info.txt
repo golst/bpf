@@ -1,0 +1,32 @@
+
+系统调用 bpf: int bpf(int cmd, union bpf_attr *attr, unsigned int size);
+bpf 程序主要分为2类： 跟踪，网络。
+
+socket filter programs: 提供能力观察网络包
+
+kprobe programs: 利用krobe 函数
+
+tracepoint programs: 将bpf函数attach 到内核提供的 tracepoint handler. /sys/kernel/debug/tracing/events
+
+xdp programs: 当网络包到达内核时，可以首先处理 xdp_pass xdp_drop xdp_tx等
+
+perf event programs: 根据 perf events 
+
+cgroup socket programs: 类似于socket filter programs, 但attach不同
+
+cgroup open socket programs: 当in a cgroup打开一个socket时，执行代码
+
+socket option programs: 在运行时，修改socket option 
+
+socket map programs: 能力到socket maps 和 socket redirects
+
+cgroup device programs: 
+socket message delivery programs: 
+raw tracepoint programs:
+cgroup socket address programs:
+
+socket reuseport programs: 允许多个程序绑定到同样的端口
+
+flow dissection programs: 跟踪网络包到不同的网络层
+
+
