@@ -43,4 +43,8 @@ bpf maps
 
 kernel probes： 通过设置动态flag. 当内核执行到某一flag，执行附加的代码，然后继续原先的代码。
     分为： kprobes kretprobes 不同内核版本可能会发生变化
-    
+
+    tracepoint 
+userland probes： 用户空间跟踪。
+
+    user statically defined tracepoints (USDTs) 
