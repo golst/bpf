@@ -29,4 +29,18 @@ socket reuseport programs: 允许多个程序绑定到同样的端口
 
 flow dissection programs: 跟踪网络包到不同的网络层
 
+bpf maps 
+    程序之间进行通信。bfp程序通过访问存在内核中的bpf maps 用户空间的程序通过文件描述符访问。
 
+    通过系统调用bpf创建 maps.
+    
+    bpf_create_map  或  通过 struct bpf_map_def SEC("maps") 文件描述符通过全局变量 map_data数组
+    bpf_map_lookup_elem
+    bpf_map_update_elem
+    bpf_map_delete_elem
+    struct bpf_spin_lock  bpf_spin_unlock
+    bpf_obj_pin bpf_obj_get
+
+kernel probes： 通过设置动态flag. 当内核执行到某一flag，执行附加的代码，然后继续原先的代码。
+    分为： kprobes kretprobes 不同内核版本可能会发生变化
+    
