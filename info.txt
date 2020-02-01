@@ -53,4 +53,14 @@ userland probes： 用户空间跟踪。
     主要的三个应用场景：
         1、包过滤 2、观察流入的包 3、统计网络包
 
+xdp 只处理 unfragmented网络包， 相关数据包的开始，结束指针
+ 1、在网络驱动中的接受路径中执行xdp bpf programs
+ 2、通用xdp。
 
+ linux kernel security capabilities seccomp. seccomp bpf 
+    capabilities: capsh, bpftrace
+    过滤系统调用。
+        seccomp 通过系统调用 prctl
+
+常见软件
+    sysdig  flowmill
